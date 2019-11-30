@@ -12,7 +12,7 @@
         "prod",
         "dev"
       ],
-      "defaultValue": "dev",
+      "defaultValue": "prod",
       "metadata": {
         "description": "Environment description used with naming resources"
       }
@@ -97,9 +97,6 @@
       "location": "[resourceGroup().location]",
       "tags": {
       },
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
-      ],
       "properties": {
         "applicationId": "webApp1",
         "application_Type": "web"
@@ -114,7 +111,7 @@
       },
       "kind": "StorageV2",
       "sku": {
-        "name": "Standard_ZRS"
+        "name": "Standard_LRS"
       },
       "properties": {
         "supportsHttpsTrafficOnly": true
